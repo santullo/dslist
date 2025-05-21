@@ -33,4 +33,5 @@ public class Game implements Serializable {
     private String shortDescription;
     @Column(columnDefinition = "TEXT")
     private String longDescription;
+
 }
