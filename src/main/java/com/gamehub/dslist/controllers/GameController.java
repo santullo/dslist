@@ -1,5 +1,6 @@
 package com.gamehub.dslist.controllers;
 
+import com.gamehub.dslist.dto.GameDTO;
 import com.gamehub.dslist.dto.GameMinDTO;
 import com.gamehub.dslist.services.GameService;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ public class GameController {
 
     private final GameService gameService;
 
-    GameController(GameService gameService) {
+    public GameController(GameService gameService) {
         this.gameService = gameService;
     }
 
@@ -23,7 +24,7 @@ public class GameController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<GameMinDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<GameDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(gameService.findById(id));
     }
 }
